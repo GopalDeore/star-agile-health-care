@@ -29,10 +29,11 @@ metadata:
 spec:
   selector:
     app: medicure-deploy-lbl
+    
+  type: Nodeport
   ports:
-    - protocol: 31000
-      port: 8080
+    - nodeport: 31000
+      port: 80
       targetPort: 8080
-      nodeport: 30080
-  type: Nodeport 
+     
 
