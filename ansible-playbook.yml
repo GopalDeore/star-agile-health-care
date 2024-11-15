@@ -17,4 +17,4 @@
     become_user : root
 
   - name: Deploy Docker Container
-    command: docker run -itd -p 8080:8082 gopal3010/medicure:latest
+    command: docker run -itd -p 8090:8082 gopal3010/medicure:latest
