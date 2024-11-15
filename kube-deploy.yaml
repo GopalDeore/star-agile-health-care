@@ -32,8 +32,8 @@ spec:
     
   type: Nodeport
   ports:
-    - nodeport: 31000
-      port: 80
-      targetPort: 8080
+  - nodeport: 31000
+    port: 80
+    targetPort: 8080
      
 
