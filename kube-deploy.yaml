@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: medicure-deployment
+  labels:
+    app: medicure-deploy-lbl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: medicure-deployment
+  template:
+    metadata:
+      labels:
+        app: medicure-deployment
+    spec:
+      containers:
+      - name: medicure-app-container
+        image: gopal3010/medicure:latest 
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: medicure-np-service
+spec:
+  selector:
+    app: medicure-deploy-lbl
+
+  type: NodePort
+  ports:
+  - nodePort: 31028
+    port: 8080
+    targetPort: 8080
