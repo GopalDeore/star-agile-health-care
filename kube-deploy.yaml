@@ -31,5 +31,5 @@ spec:
     targetPort: 8000
     nodeport: 30001
 selector:
-  app: medicure-deployment
+  app: medicure-deploy-lbl
 
